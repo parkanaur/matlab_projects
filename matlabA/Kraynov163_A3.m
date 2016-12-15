@@ -1,16 +1,15 @@
-% Ηΰδΰνθε 1 
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 1 
 grid on; axis equal; 
 line([0; 2], [0; 1]); 
 line([0; -1], [0; 2]); 
 line([-2; 0], [-4; 0]); 
 
-% Ηΰδΰνθε 2 
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 2 
 figure; grid on; axis equal; 
 line([0 0 0; 2 2 3], [0 2 2; 1 0 0]); 
 
-% Ηΰδΰνθε 3 
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 3 
 figure; 
-
 subplot(2, 2, 1); 
 grid on; axis equal; 
 line([0 0 0; 2 2 3], [0 2 2; 1 0 0]); 
@@ -27,7 +26,7 @@ subplot(2, 2, 4);
 grid on; axis equal; 
 line([0; 3], [2; 0]); 
 
-% Ηΰδΰνθε 4 
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 4 
 xbeg = [0 0 0]; 
 xc = [2 2 3]; 
 ybeg = [0 2 2]; 
@@ -36,13 +35,13 @@ figure;
 quiver(xbeg, ybeg, xc, yc, 0, 'LineWidth', 4, 'Color', [.0, .0, .0]); 
 axis equal; grid on; 
 
-% Ηΰδΰνθε 5 
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 5 
 xb = [0 0 0]; yb = [0 0 0]; zb = [0 0 0]; 
 xc = [1 0 0]; yc = [0 1 0]; zc = [0 0 1]; 
 figure; 
 quiver3(xb, yb, zb, xc, yc, zc, 0, 'LineWidth', 2, 'Color', [.0, .0, .0]); 
 
-% Ηΰδΰνθε 6 
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 6 
 figure;
 ax = gca;
 xlim([-2 2])
@@ -55,7 +54,7 @@ ax.YAxisLocation = 'origin';
 ax.XAxis.LineWidth = 2;
 ax.YAxis.LineWidth = 2;
 
-% Ηΰδΰνθε 7
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 7
 figure;
 xb = [0 0 0]; yb = [0 0 0]; zb = [0 0 0]; 
 xc = [1 0 0]; yc = [0 1 0]; zc = [0 0 1];
@@ -69,7 +68,7 @@ plot3([ax(1) ax(2)], [0 0], [0 0], 'LineWidth', 2);
 plot3([0 0], [ax(3) ax(4)], [0 0], 'LineWidth', 2);
 plot3([0 0], [0 0], [ax(5) ax(6)], 'LineWidth', 2);
 
-% Ηΰδΰνθε 8
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 8
 figure; grid on; axis equal; hold on;
 ax = gca;
 xlim([-6 6])
@@ -82,7 +81,7 @@ line([1,2;3,4],[-1,0;-3.5,-5]);
 text(3.1, -3.4, '3; -3.5');
 text(4.1, -4.8, '4; -5');
 
-% Ηΰδΰνθε 9
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 9
 figure; grid on; axis equal; hold on;
 ax = gca;
 xlim([-3, 3]); ylim([-3; 3]);
@@ -97,7 +96,7 @@ text(-2.7, 0.2, 'A(-2 0)');
 text(1.1, 2.1, 'B(1 2)');
 text(1.1, -1.1, 'C(1 -1)');
 
-% Ηΰδΰνθε 10
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 10
 figure;
 a = [-2 0]; b = [1 2]; c = [1 -1]; d = [-2 -3];
 diffab = b - a; diffbc = c - b; diffdc = c - d; diffad = d - a;
@@ -131,7 +130,7 @@ quiver(a(1),a(2),diffad(1),diffad(2),0, 'LineWidth', 2, 'Color', [.0, .0, 1]);
 quiver(b(1),b(2),diffbc(1),diffbc(2),0, 'LineWidth', 2, 'Color', [.0, .0, .0]);
 quiver(d(1),d(2),diffdc(1),diffdc(2),0, 'LineWidth', 2, 'Color', [.0, .0, .0]);
 
-% Ηΰδΰνθε 11
+% Γ‡Γ Γ¤Γ Γ­Γ¨Γ¥ 11
 figure;
 a1 = [2 3 4];
 b1 = [3 5 2];
