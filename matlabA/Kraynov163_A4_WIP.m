@@ -1,4 +1,4 @@
-% Çàäàíèå 1 
+% Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 1 
 figure; 
 subplot(1, 2, 1); %(a+b)+c=a+(b+c) 
 grid on; axis equal; hold on; 
@@ -17,7 +17,7 @@ quiver3(0, 0, 0, 3, 5, 2, 1);
 quiver3(3, 5, 2, 2, 3, 4, 1); 
 isequal(a+b, b+a)
 
-% Çàäàíèå 2 
+% Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 2 
 a = [4 2 3]; b = [1 5 2]; x = 4; y = 3; 
 %1: x(a+b) = xa + xb 
 isequal((x*(a+b)),(x*a+x*b)) 
@@ -26,7 +26,7 @@ isequal((x+y)*a, x*a+y*a)
 %3: x(ya)=(xy)a 
 isequal(x*(y*a), (x*y)*a) 
 
-% Çàäàíèå 3 
+% Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 3 
 a = [3 4 5]; 
 alen = sqrt(a(1)*a(1) + a(2)*a(2) + a(3)*a(3));
 al2 = norm(a);
@@ -39,7 +39,7 @@ b12 = norm(b);
 bort = b / norm(b);
 isequal(b, blen*bort);
 
-% Çàäàíèå 4
+% Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 4
 a = [3 4 5]; 
 alen = sqrt(a(1)*a(1) + a(2)*a(2) + a(3)*a(3));
 cosax = a(1) / alen;
@@ -58,10 +58,10 @@ cosby = b(2) / blen;
 angby = radtodeg(acos(cosby))
 isequal(int64(cosbx^2+cosby^2), 1)
 
-% Çàäàíèå 5
+% Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 5
 a = [1 -2 0]; b = [0 1 1]; c = [1 2 2];
-x = [a; b; c];
-isequal(det(x), 0) % != 0 -> íåêîìïëàíàðíû
+x = transpose([a; b; c]);
+isequal(det(x), 0) % 0 => Ð½ÐµÐºÐ¾Ð¼Ð¿Ð»Ð°Ð½Ð°Ñ€Ð½Ñ‹
 orta = a / norm(a);
 ortb = b / norm(b);
 ortc = c / norm(c);
@@ -71,7 +71,42 @@ line([0 0 0; orta(1) ortb(1) ortc(1)], ...
 [0 0 0; orta(2) ortb(2) ortc(2)], [0 0 0; orta(3) ortb(3) ortc(3)], 'Color', ...
 [.0 .0 .0], 'LineWidth', 4);
 
-% Çàäàíèå 6
-p = [-2 3]; q = [1 2];
-x = [p; q];
-isequal(det(x), 0)
+% Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 6
+p = [2 -3]; q = [1 2]; s = [9; 4];
+x = transpose([p; q])
+isequal(det(x), 0) % Ð½ÐµÐºÐ¾Ð¼Ð¿Ð»Ð°Ð½Ð°Ñ€Ð½Ð¾ÑÑ‚ÑŒ
+sol = [x s];
+razl = rref(sol);
+answ = razl(:,3) % s = answ(1)*p + answ(2)*q
+mp = answ(1)*p; nq = answ(2)*q;
+mp + nq
+
+figure; grid on; hold on; axis equal;
+ax = gca;
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
+quiver([0 0 0], [0 0 0], [p(1) q(1) s(1)], [p(2) q(2) s(2)]);
+quiver([0 0], [0 0], [mp(1) nq(1)], [mp(2) nq(2)]);
+
+% Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 9
+a = [1 -2 0]; b = [0 1 1]; c = [1 2 2];
+% 1
+isequal(a.*b, b.*a)
+% 2
+isequal((a+b).*c, a.*c+b.*c)
+% 2*
+isequal(a.*(b+c), a.*b+a.*c)
+% 3
+isequal((c(2)*a).*b, c(2)*(a.*b))
+% 3*
+isequal(a.*(c(2)*b), c(2)*(a.*b))
+% 4
+isequal(a.*a, 0) % => 0
+
+% Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 10
+a = [1 -2 0]; b = [0 1 1]; c = [1 2 2];
+% 2
+isequal((a.*b).*c, a.*(b.*c))
+% 4
+isequal((a.*b).*b, a.*(b.*2))
+
