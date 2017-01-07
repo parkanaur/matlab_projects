@@ -1,33 +1,31 @@
-% Задание 1а
+% Р—Р°РґР°РЅРёРµ 1Р°
 % Documents/MATLAB
 x = fsolve(@MA2_1A, [0, 0])
 
-% Задание 1б
+% Р—Р°РґР°РЅРёРµ 1Р±
 x_ = fsolve(@MA2_1B, [0, 0, 0])
 
-% Задание 2
+% Р—Р°РґР°РЅРёРµ 2
 syms x
 lim1 = limit((10+x)^(1/x), x, 0, 'left')
 lim2 = limit((10+x)^(1/x), x, 0, 'right')
 
-% Задание 3
+% Р—Р°РґР°РЅРёРµ 3
 ans3 = diff(atan(x))
 syms dx
 ans3_ = limit((atan(x+dx)-atan(x))/dx, dx, 0)
 
-% Задание 4
+% Р—Р°РґР°РЅРёРµ 4
 ans4 = limit((9*(x^2)-1)/(x+(1/3)), x, -1/3)
 
-% Задание 5
+% Р—Р°РґР°РЅРёРµ 5
 ans5 = diff((3*cos(5*(x^2)))^3)
 
-% Задание 6 - выводит empty sym
+% Р—Р°РґР°РЅРёРµ 6
 syms x y(x)
 y(x) = dsolve(diff(y,x) == (x^2)*(y^3)*sin((y+x)^3), y(0) == 1)
 
-% Задание 8
-% функция задана неявно, не указано, по какой переменной
-% считать производные, поэтому были посчитаны все возможные
+% Р—Р°РґР°РЅРёРµ 8
 syms x y z
 func1 = sin(x+2*y)+2*sqrt(x*y*z);
 u1xx = diff(func1, x, 2)
@@ -76,12 +74,12 @@ u4zx = diff(diff(func4, y), x)
 u4zy = diff(func4, y, 2)
 u4zz = diff(diff(func4, y), z)
 
-% Задание 9
+% Р—Р°РґР°РЅРёРµ 9
 syms x
 lim9a = limit(sin(x)/(x), x, 0)
 lim9b = limit((1-exp(x)^(-x))/(x), x, inf)
 lim9c = limit((1-x)/(log(x)), x, 1)
 
-% Задание 10
+% Р—Р°РґР°РЅРёРµ 10
 x10 = fsolve(@MA2_10, [0, 0])
 
